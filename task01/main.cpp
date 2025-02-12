@@ -1,20 +1,25 @@
 #include <iostream>
+#include "util.h"
+#include "sort.h"
 #include <ctime>
 using namespace std;
 	
-string toString(int* vector, int size);
-void randomNumber(int* vector, int size, int = 0,int = 100);
+#define SIZE 20
 
 int main() {
-	srand(time(NULL));
-	int vector[]{ 1,2,3,4,5,6,7,8,9,10 };
-	int size = sizeof(vector)/sizeof(int);
+	int vector[]{ 10, 1, 2,3,4,5,6,7,8,9 };
 
-	cout << toString(vector,size) << endl;
+	init(vector, SIZE, -10, 10);
 
-	randomNumber(vector,size, 0, 100);
+	cout << "Before vector: " << convert(vector, SIZE) << endl;
 
-	cout << toString(vector, size) << endl;
+	//int count = bubble_sort(vector, SIZE);
+
+	selected_sort(vector, SIZE);
+
+	cout << "After vector: " << convert(vector, SIZE) << endl;
+
+	//cout << "Count: " << count << endl;
 
 
 	return 0;

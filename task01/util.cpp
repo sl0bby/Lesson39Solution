@@ -1,23 +1,26 @@
+#include "util.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 
-string toString(int* vector, int size) {
-	string stringVector = " ";
 
-	for (int i = 0; i < size; i++) {
-		stringVector += to_string(vector[i]);
+
+	string convert(int* array, int size) {
+		string s = "";
+
+		for (int i = 0; i < size; i++)
+		{
+			s += to_string(array[i]) + " ";
+		}
+
+		return s;
 	}
 
-	return stringVector;
-}
-void randomNumber(int* vector, int size,int = 0,int = 100) {
-	
-	for (int i = 0; i < size; i++) {
-		vector[i] = rand() % (100 - 0 + 1) + 0;
+	void init(int* array, int size, int a, int b) {
+		for (int i = 0; i < size; i++)
+		{
+			array[i] = rand() % (b - a + 1) + a;
+		}
 	}
-
-
-}
